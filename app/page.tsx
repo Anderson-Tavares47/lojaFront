@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <>
       <Header search={search} onSearchChange={setSearch} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-5 min-h-[705px]">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             product?.id && (
