@@ -21,7 +21,7 @@ export default function ProductPage() {
     if (!id) return
 
     setLoading(true)
-    fetch(`https://loja-3bvt.onrender.com/products/${id}`)
+    fetch(`https://loja-weld-gamma.vercel.app/products/${id}`)
       .then(res => {
         if (!res.ok) throw new Error('Produto não encontrado')
         return res.json()
