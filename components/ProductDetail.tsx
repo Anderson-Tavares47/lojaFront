@@ -16,7 +16,7 @@ export default function ProductDetail({ product, onAddToCart }: ProductDetailPro
   return (
     <div className="flex flex-col gap-4 max-w-[800px] w-full mx-auto">
       <img
-        src={`https://loja-3bvt.onrender.com/image/${product.imageId}`}
+        src={`https://loja-weld-gamma.vercel.app/image/${product.imageId}`}
         alt={product.name}
         className="w-full h-96 object-cover rounded shadow cursor-zoom-in"
         onClick={() => setIsOpen(true)}
@@ -39,7 +39,7 @@ export default function ProductDetail({ product, onAddToCart }: ProductDetailPro
           onClick={() => setIsOpen(false)}
         >
           <img
-            src={`https://loja-3bvt.onrender.com/image/${product.imageId}`}
+            src={`https://loja-weld-gamma.vercel.app/image/${product.imageId}`}
             alt={product.name}
             className="max-w-[90%] max-h-[90%] object-contain cursor-zoom-out transition-transform duration-300 hover:scale-105"
           />
