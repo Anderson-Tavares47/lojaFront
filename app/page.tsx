@@ -12,7 +12,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('https://loja-3bvt.onrender.com/products')
+        const res = await fetch('https://loja-weld-gamma.vercel.app/products')
         if (!res.ok) throw new Error('Erro ao buscar produtos')
         const data = await res.json()
         setProducts(data)
