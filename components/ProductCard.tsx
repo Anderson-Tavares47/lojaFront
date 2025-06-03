@@ -8,7 +8,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <div className="border border-[#17686f] rounded p-4">
       <Link href={`/products/${product.id}`}>
         <img
-          src={`https://loja-3bvt.onrender.com/image/${product.imageId}`}
+          src={`https://loja-weld-gamma.vercel.app/image/${product.imageId}`}
           alt={product.name}
           className="w-full h-110 object-cover mb-2 cursor-pointer"
         />
