@@ -22,7 +22,7 @@ export default function AdminForm() {
   const [editingProductId, setEditingProductId] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('https://loja-3bvt.onrender.com/products')
+    fetch('https://loja-weld-gamma.vercel.app/products')
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error('Erro ao buscar produtos', err))
@@ -43,7 +43,7 @@ export default function AdminForm() {
         const formData = new FormData()
         formData.append('file', file)
 
-        const imageRes = await fetch('https://loja-3bvt.onrender.com/upload', {
+        const imageRes = await fetch('https://loja-weld-gamma.vercel.app/upload', {
           method: 'POST',
           body: formData
         })
@@ -63,14 +63,14 @@ export default function AdminForm() {
       if (imageId) payload.imageId = imageId
 
       if (editingProductId) {
-        await fetch(`https://loja-3bvt.onrender.com/products/${editingProductId}`, {
+        await fetch(`https://loja-weld-gamma.vercel.app/products/${editingProductId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         })
         setFeedback('Produto atualizado com sucesso!')
       } else {
-        await fetch('https://loja-3bvt.onrender.com/products', {
+        await fetch('https://loja-weld-gamma.vercel.app/products', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
@@ -84,7 +84,7 @@ export default function AdminForm() {
       setFile(null)
       setEditingProductId(null)
 
-      const updated = await fetch('https://loja-3bvt.onrender.com/products').then(res => res.json())
+      const updated = await fetch('https://loja-weld-gamma.vercel.app/products').then(res => res.json())
       setProducts(updated)
     } catch (error) {
       console.error(error)
@@ -110,7 +110,7 @@ export default function AdminForm() {
     if (!confirmed) return
 
     try {
-      await fetch(`https://loja-3bvt.onrender.com/products/${id}`, {
+      await fetch(`https://loja-weld-gamma.vercel.app/products/${id}`, {
         method: 'DELETE',
       })
       setProducts(prev => prev.filter(product => product.id !== id))
