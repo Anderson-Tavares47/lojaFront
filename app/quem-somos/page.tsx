@@ -13,7 +13,7 @@ export default function QuemSomosPage() {
         </h1>
         <div className="space-y-6 text-center text-[22px] leading-[1.6]">
           <p>
-            Na <strong>Auchiq</strong>, acreditamos que estilo não é exclusividade dos humanos.
+            Na <strong>AuChic</strong>, acreditamos que estilo não é exclusividade dos humanos.
             Fundada por apaixonados por pets e por moda (sim, essa mistura existe),
             a Auchiq nasceu para transformar o guarda-roupa dos cachorros em algo digno
             de passarela ou pelo menos digno daquele passeio no parque.
