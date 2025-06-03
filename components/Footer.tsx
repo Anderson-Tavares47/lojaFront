@@ -14,6 +14,7 @@ export default function Footer() {
         <div className="flex space-x-4">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/cart" className="hover:underline">Carrinho</Link>
+          <Link href="/quem-somos" className="hover:underline">Quem Somos</Link>
           {/* <Link href="/admin" className="hover:underline">Admin</Link> */}
         </div>
 
