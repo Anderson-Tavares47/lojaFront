@@ -27,7 +27,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const savedItems: { id: number; quantity: number }[] = JSON.parse(cartCookie)
       Promise.all(
         savedItems.map(item =>
-          fetch(`https://loja-3bvt.onrender.com/products/${item.id}`)
+          fetch(`https://loja-weld-gamma.vercel.app/products/${item.id}`)
             .then(res => res.json())
             .then(product => ({ ...product, quantity: item.quantity }))
             .catch(() => null)
