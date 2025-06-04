@@ -11,8 +11,6 @@ export default function ProductDetail({ product, onAddToCart }: ProductDetailPro
 
   if (!product) return null
 
-  console.log(product, 'wvsve')
-
   return (
     <div className="flex flex-col gap-4 max-w-[800px] w-full mx-auto">
       <img
