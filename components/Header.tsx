@@ -47,12 +47,12 @@ export default function Header({ search, onSearchChange }: HeaderProps) {
 
           <div className="flex justify-between items-center text-sm px-1">
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5551995936074"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline whitespace-nowrap"
             >
-              📞 <span className="font-medium">Contato:</span> (11) 99999-9999
+              📞 <span className="font-medium">Contato:</span> (51) 99593-6074
             </a>
           </div>
         </div>
