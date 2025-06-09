@@ -25,7 +25,6 @@ export default function CartPage() {
   const handleCalculateShipping = async () => {
     try {
       const data = await calculateFrete(cep)
-      console.log('Frete calculado:', data)
       setFrete(data)
     } catch (error) {
       console.error('Erro ao calcular frete:', error)
@@ -41,7 +40,7 @@ export default function CartPage() {
   const freteValue = selectedFrete ? parseFloat(selectedFrete.price) : 0
   const totalComFrete = selectedItems.length > 0 ? total + freteValue : total
 
-  const isCepValid = cep.replace(/\D/g, '').length >= 8  // remove não números
+  const isCepValid = cep.replace(/\D/g, '').length >= 8
 
   return (
     <>
@@ -138,34 +137,44 @@ export default function CartPage() {
               </div>
             )}
 
-            <button
-              className={`w-full py-3 rounded transition ${selectedItems.length === 0
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-[#17686f] hover:bg-[#117f7c] text-white'
-                }`}
-              disabled={selectedItems.length === 0}
-              onClick={() => {
-                const selectedProducts = cart.filter(item => selectedItems.includes(item.id))
+            <div className="flex justify-between items-center gap-4 mt-6">
+              <button
+                onClick={() => window.location.href = '/'}
+                className="px-6 py-3 bg-[#17686f] text-white rounded hover:bg-[#117f7c] transition sm:w-auto"
+              >
+                Voltar
+              </button>
 
-                const productsText = selectedProducts.map(item => (
-                  `• ${item.name} - Quantidade: ${item.quantity}`
-                )).join('\n')
+              <button
+                className={`px-6 py-3 rounded transition text-center ${selectedItems.length === 0
+                  ? 'bg-gray-400 cursor-not-allowed text-gray-700'
+                  : 'bg-[#17686f] hover:bg-[#117f7c] text-white'
+                  }`}
+                disabled={selectedItems.length === 0}
+                onClick={() => {
+                  const selectedProducts = cart.filter(item => selectedItems.includes(item.id))
 
-                const freteText = selectedFrete
-                  ? `\nFrete: ${selectedFrete.name} - ${selectedFrete.currency} ${selectedFrete.price}`
-                  : ''
+                  const productsText = selectedProducts.map(item => (
+                    `• ${item.name} - Quantidade: ${item.quantity}`
+                  )).join('\n')
 
-                const message = `Olá, gostaria de finalizar minha compra com os seguintes itens:\n\n${productsText}\n\nTotal: R$ ${totalComFrete.toFixed(2)}${freteText}`
+                  const freteText = selectedFrete
+                    ? `\nFrete: ${selectedFrete.name} - ${selectedFrete.currency} ${selectedFrete.price}`
+                    : ''
 
-                const whatsappNumber = '5551995936074'
+                  const message = `Olá, gostaria de finalizar minha compra com os seguintes itens:\n\n${productsText}\n\nTotal: R$ ${totalComFrete.toFixed(2)}${freteText}`
 
-                const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+                  const whatsappNumber = '5551995936074'
 
-                window.open(whatsappLink, '_blank')
-              }}
-            >
-              Fazer Pedido
-            </button>
+                  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+
+                  window.open(whatsappLink, '_blank')
+                }}
+              >
+                Fazer Pedido
+              </button>
+            </div>
+
 
           </div>
         )}
