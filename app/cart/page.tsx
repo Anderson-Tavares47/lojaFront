@@ -50,11 +50,18 @@ export default function CartPage() {
         <h1 className="text-3xl font-bold mb-6 text-center">Carrinho 🛒</h1>
 
         {cart.length === 0 ? (
-          <div className="text-center text-gray-500">
-            <p className="text-2xl">😢</p>
-            <p className="mt-2">Seu carrinho está vazio</p>
-          </div>
-        ) : (
+  <div className="text-center text-gray-500 space-y-4">
+    <p className="text-2xl">😢</p>
+    <p>Seu carrinho está vazio</p>
+    <button
+      onClick={() => window.location.href = '/'}
+      className="mt-4 px-6 py-3 bg-[#17686f] text-white rounded hover:bg-[#117f7c] transition"
+    >
+      Voltar à loja
+    </button>
+  </div>
+) : (
+
           <div className="space-y-4">
             {cart.map(item => (
               <div key={item.id} className="border rounded p-4 shadow flex justify-between items-center">
@@ -142,7 +149,7 @@ export default function CartPage() {
                 onClick={() => window.location.href = '/'}
                 className="px-6 py-3 bg-[#17686f] text-white rounded hover:bg-[#117f7c] transition sm:w-auto"
               >
-                Voltar
+                Continuar Comprando
               </button>
 
               <button
