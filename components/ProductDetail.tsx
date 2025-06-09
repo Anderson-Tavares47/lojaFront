@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Product } from '../lib/types'
 
 interface ProductDetailProps {
@@ -8,6 +9,7 @@ interface ProductDetailProps {
 
 export default function ProductDetail({ product, onAddToCart }: ProductDetailProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
 
   if (!product) return null
 
@@ -24,12 +26,22 @@ export default function ProductDetail({ product, onAddToCart }: ProductDetailPro
       <p className="text-gray-700 text-lg">{product.description}</p>
       <p className="text-2xl font-semibold">R$ {product.price?.toFixed(2)}</p>
 
-      <button
-        onClick={() => onAddToCart(product)}
-        className="mt-4 px-6 py-3 bg-[#17686f] text-white rounded hover:bg-[#117f7c] transition"
-      >
-        Adicionar ao carrinho
-      </button>
+      {/* 🔁 Botões lado a lado */}
+      <div className="flex justify-between gap-4 mt-4">
+        <button
+          onClick={() => router.push('/')}
+          className="px-6 py-3 bg-[#17686f] text-white rounded hover:bg-[#117f7c] transition"
+        >
+          Voltar
+        </button>
+
+        <button
+          onClick={() => onAddToCart(product)}
+          className="px-6 py-3 bg-[#17686f] text-white rounded hover:bg-[#117f7c] transition"
+        >
+          Adicionar ao carrinho
+        </button>
+      </div>
 
       {isOpen && (
         <div
