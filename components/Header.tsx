@@ -32,7 +32,7 @@ export default function Header({ search, onSearchChange }: HeaderProps) {
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold">
               <div className="flex items-center space-x-2">
-                <Image className="rounded-[48px]" src={Logo} alt="Logo" width={80} height={80} />
+                <Image className="rounded-[48px]" src={Logo} alt="Logo" width={80} height={80} priority/>
                 <span>🐾</span>
               </div>
             </Link>
