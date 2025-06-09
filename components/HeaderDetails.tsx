@@ -17,7 +17,7 @@ export default function HeaderDetail() {
                 <div className="flex justify-between items-center md:hidden mb-4">
                     <Link href="/" className="text-2xl font-bold">
                         <div className="flex items-center space-x-2">
-                            <Image className="rounded-[48px]" src={Logo} alt="Logo" width={100} height={100} />
+                            <Image className="rounded-[48px]" src={Logo} alt="Logo" width={100} height={100} priority/>
                             <span>🐾</span>
                         </div>
                     </Link>
